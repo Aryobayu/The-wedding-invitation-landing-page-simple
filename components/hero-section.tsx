@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { Heart } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { Heart } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -13,11 +13,18 @@ export function HeroSection() {
           />
         </svg>
       </div>
-      
+
       <div className="absolute top-8 right-8 w-12 h-12 opacity-20">
         <svg viewBox="0 0 100 100" className="w-full h-full text-secondary">
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="50" cy="50" r="20" fill="currentColor"/>
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <circle cx="50" cy="50" r="20" fill="currentColor" />
         </svg>
       </div>
 
@@ -27,7 +34,7 @@ export function HeroSection() {
             The Wedding of
           </p>
           <h1 className="text-6xl md:text-8xl font-serif text-primary font-bold tracking-tight">
-            Santi <span className="text-secondary">&</span> Faril
+            Faril <span className="text-secondary">&</span> Santi
           </h1>
           <p className="text-xl md:text-2xl text-foreground font-medium mt-4">
             Senin, 27 Oktober 2025
@@ -39,8 +46,8 @@ export function HeroSection() {
           <p className="text-lg font-medium text-card-foreground">Nama Tamu</p>
         </div>
 
-        <Button 
-          size="lg" 
+        <Button
+          size="lg"
           className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
         >
           <Heart className="w-5 h-5 mr-2" />
@@ -57,11 +64,11 @@ export function HeroSection() {
             stroke="currentColor"
             strokeWidth="2"
           />
-          <circle cx="20" cy="15" r="2" fill="currentColor"/>
-          <circle cx="50" cy="15" r="2" fill="currentColor"/>
-          <circle cx="80" cy="15" r="2" fill="currentColor"/>
+          <circle cx="20" cy="15" r="2" fill="currentColor" />
+          <circle cx="50" cy="15" r="2" fill="currentColor" />
+          <circle cx="80" cy="15" r="2" fill="currentColor" />
         </svg>
       </div>
     </section>
-  )
+  );
 }

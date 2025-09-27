@@ -11,7 +11,9 @@ export function EventDetailsSection() {
             Save The Date
           </h2>
           <p className="text-muted-foreground text-lg">
-            Kami mengundang Anda untuk berbagi kebahagiaan di hari istimewa kami
+            Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami
+            mengundang Bapak/Ibu/Saudara/i, untuk berbagi kebahagiaan di hari
+            istimewa kami
           </p>
         </div>
 
@@ -40,9 +42,9 @@ export function EventDetailsSection() {
                   <p className="font-medium">Tempat:</p>
                   <p className="text-muted-foreground leading-relaxed">
                     Kediaman ?<br />
-                    Wedelan Rt 1 Rw 11
+                    Ds.Wedelan Rt 1 Rw 11
                     <br />
-                    Bangsri Jepara
+                    Kec. Bangsri Kab. Jepara
                   </p>
                 </div>
               </div>
@@ -80,11 +82,11 @@ export function EventDetailsSection() {
                 <div>
                   <p className="font-medium">Tempat:</p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Kediaman Wanita
+                    Kediaman Pria
                     <br />
-                    Wedelan Rt 1 Rw 11
+                    Ds.Banjaragung RT 04 RW 05
                     <br />
-                    Bangsri Jepara
+                    Kec. Bangsri Kab. Jepara
                   </p>
                 </div>
               </div>
