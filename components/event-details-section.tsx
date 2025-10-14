@@ -19,13 +19,13 @@ export function EventDetailsSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Akad Nikah */}
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="bg-card border border-border shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-2xl md:text-3xl font-serif text-primary">
                 Akad Nikah
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 flex flex-col flex-grow">
               <div className="flex items-center gap-3 text-card-foreground">
                 <Calendar className="w-5 h-5 text-secondary" />
                 <span className="font-medium">Senin, 27 Oktober 2025</span>
@@ -41,7 +41,8 @@ export function EventDetailsSection() {
                 <div>
                   <p className="font-medium">Tempat:</p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Kediaman ?<br />
+                    Kediaman Wanita
+                    <br />
                     Ds.Wedelan Rt 1 Rw 11
                     <br />
                     Kec. Bangsri Kab. Jepara
@@ -49,24 +50,32 @@ export function EventDetailsSection() {
                 </div>
               </div>
 
-              <Button
-                variant="outline"
-                className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-              >
-                <MapPin className="w-4 h-4 mr-2" />
-                Lihat di Google Maps
-              </Button>
+              <div className="mt-auto pt-4">
+                <a
+                  href="https://maps.app.goo.gl/4hqTRpw9iN6TbuWu5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Lihat di Google Maps
+                  </Button>
+                </a>
+              </div>
             </CardContent>
           </Card>
 
           {/* Resepsi Nikah */}
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="bg-card border border-border shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-2xl md:text-3xl font-serif text-primary">
                 Resepsi Nikah
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 flex flex-col flex-grow">
               <div className="flex items-center gap-3 text-card-foreground">
                 <Calendar className="w-5 h-5 text-secondary" />
                 <span className="font-medium">Senin, 27 Oktober 2025</span>
@@ -91,13 +100,21 @@ export function EventDetailsSection() {
                 </div>
               </div>
 
-              <Button
-                variant="outline"
-                className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-              >
-                <MapPin className="w-4 h-4 mr-2" />
-                Lihat di Google Maps
-              </Button>
+              <div className="mt-auto pt-4">
+                <a
+                  href="https://maps.app.goo.gl/RTZRt3fgJPzMatYp9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Lihat di Google Maps
+                  </Button>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

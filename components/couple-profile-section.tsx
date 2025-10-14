@@ -1,36 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 
-export function CoupleSection() {
+export function CoupleProfileSection() {
   return (
-    <section className="py-16 px-4">
+    <section className="pt-4 pb-16 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Bismillah and greeting */}
-        <div className="text-center mb-12">
-          <div
-            className="text-3xl md:text-4xl font-serif text-primary mb-4"
-            style={{ fontFamily: "serif" }}
-          >
-            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
-          </div>
-          <p className="text-lg text-foreground leading-relaxed">
-            Assalamu`alaikum Warahmatullahi Wabarakatuh
-          </p>
-          <p className="text-muted-foreground mt-4 leading-relaxed max-w-2xl mx-auto">
-            Maha Suci Allah yang telah menciptakan makhluk-Nya
-            berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi
-            pernikahan kami
-          </p>
-        </div>
-
-        {/* Couple profiles */}
-        <Card className="bg-card border border-border shadow-lg">
+        <Card> {/* Card will now use the new theme automatically */}
           <CardContent className="p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-8 items-center">
               {/* Bride */}
               <div className="text-center space-y-4">
-                <div className="w-32 h-32 mx-auto bg-muted rounded-full flex items-center justify-center mb-4">
+                <div className="w-32 h-32 mx-auto bg-navy/10 rounded-full flex items-center justify-center mb-4">
                   <svg
-                    className="w-16 h-16 text-muted-foreground"
+                    className="w-16 h-16 text-navy/40"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -38,10 +19,10 @@ export function CoupleSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-serif text-primary font-bold">
+                  <h3 className="font-serif text-2xl md:text-3xl text-navy font-bold">
                     Santi Rinawati
                   </h3>
-                  <p className="text-muted-foreground mt-2 leading-relaxed">
+                  <p className="font-sans text-navy/70 mt-2 leading-relaxed">
                     Putri dari
                     <br />
                     Bapak Alm. Satrio &<br />
@@ -52,16 +33,16 @@ export function CoupleSection() {
 
               {/* Ampersand */}
               <div className="text-center">
-                <div className="text-6xl md:text-8xl font-serif text-secondary font-bold">
+                <div className="font-serif text-6xl md:text-8xl text-gold font-bold">
                   &
                 </div>
               </div>
 
               {/* Groom */}
               <div className="text-center space-y-4">
-                <div className="w-32 h-32 mx-auto bg-muted rounded-full flex items-center justify-center mb-4">
+                <div className="w-32 h-32 mx-auto bg-navy/10 rounded-full flex items-center justify-center mb-4">
                   <svg
-                    className="w-16 h-16 text-muted-foreground"
+                    className="w-16 h-16 text-navy/40"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -69,10 +50,10 @@ export function CoupleSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-serif text-primary font-bold">
+                  <h3 className="font-serif text-2xl md:text-3xl text-navy font-bold">
                     Muhammad Faril
                   </h3>
-                  <p className="text-muted-foreground mt-2 leading-relaxed">
+                  <p className="font-sans text-navy/70 mt-2 leading-relaxed">
                     Putra dari
                     <br />
                     Bapak Ahmad Syuhada' &<br />
