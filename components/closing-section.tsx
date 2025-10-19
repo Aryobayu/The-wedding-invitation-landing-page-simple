@@ -1,41 +1,47 @@
+"use client";
+
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+
 export function ClosingSection() {
   return (
-    <section className="py-20 px-4 text-center bg-muted/30">
-      <div className="max-w-4xl mx-auto space-y-12">
-        <div>
-          <p className="text-lg text-muted-foreground mb-4">
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
-            Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada
-            kedua mempelai.
-          </p>
-          <p className="text-lg text-muted-foreground">
-            Atas kehadiran dan doa restu, kami ucapkan terima kasih.
-          </p>
-        </div>
+    <section className="relative h-screen max-h-[900px] w-full bg-navy-900 text-center text-cream-100">
+      {/* Background Image Container */}
+      <div className="absolute inset-0 closing-background opacity-66" />
 
-        <div>
-          <p className="text-xl font-serif text-primary mb-2">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-          <p className="text-2xl md:text-3xl font-serif text-primary font-bold mt-8 mb-4">
-            Kami yang Berbahagia,
-          </p>
-          <h3 className="text-4xl md:text-6xl font-serif text-secondary font-extrabold tracking-tight">
-            Santi & Faril
-          </h3>
-        </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-900/20 via-navy-900/80 to-navy-900" />
 
-        <div className="text-muted-foreground text-sm">
-          <p className="font-semibold">Turut Mengundang:</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-4">
-            <div>
-              <p className="font-medium">Kel. Besar Bapak Alm. Satrio</p>
-              <p className="font-medium">Kel. Besar Ibu Rohmatun</p>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-start h-full w-full p-8 pt-24 md:pt-32">
+        <AnimateOnScroll className="w-full max-w-3xl mx-auto">
+          <div className="flex flex-col items-center space-y-8">
+            <div className="space-y-2">
+              <h2 className="text-3xl md:text-4xl font-serif text-gold-300">
+                Terima Kasih
+              </h2>
+              <p className="text-xl md:text-2xl font-serif text-cream-100">
+                Kami yang Berbahagia,
+              </p>
+              <h3 className="text-5xl md:text-7xl font-serif text-gold-300 font-bold pt-4">
+                Faril & Santi
+              </h3>
             </div>
-            <div>
-              <p className="font-medium">Kel. Besar Bapak Ahmad Syuhada'</p>
-              <p className="font-medium">Kel. Besar Ibu Nur Hidayah</p>
+
+            <div className="w-48 h-px mx-auto bg-gold-300/50" />
+
+            <div className="text-cream-100/90 text-base md:text-lg space-y-4">
+              <div>
+                <p className="font-semibold">Kel. Besar Bapak Alm. Satrio</p>
+                <p className="font-semibold">& Ibu Rohmatun</p>
+              </div>
+              <p className="font-serif text-2xl text-gold-300">&</p>
+              <div>
+                <p className="font-semibold">Kel. Besar Bapak Ahmad Syuhada'</p>
+                <p className="font-semibold">& Ibu Nur Hidayah</p>
+              </div>
             </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

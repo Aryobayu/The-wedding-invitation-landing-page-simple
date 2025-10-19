@@ -63,17 +63,27 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ```
 .
-├── app/                 # Next.js 14 app directory
-├── components/          # Reusable components
+├── app/                 # Next.js 14 app directory (App Router)
+│   ├── api/             # API routes (e.g., for RSVP)
+│   └── page.tsx         # Main entry point for the page
+├── components/          # Reusable React components
+│   ├── ui/              # Basic UI elements from shadcn/ui
+│   └── *.tsx            # Sectional components (e.g., hero, countdown)
+├── context/             # React Context providers
 ├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions
+├── lib/                 # Utility functions and library helpers (e.g., Prisma, utils)
+├── prisma/              # Prisma schema, database, and migrations
 ├── public/              # Static assets
-├── styles/              # Global styles
-├── components.json      # Shadcn/ui configuration
+│   ├── ornaments/       # Decorative images
+│   ├── music/           # Music files
+│   └── *.jpeg           # Photos of the couple
+├── styles/              # Global styles (deprecated, use app/globals.css)
+├── .gitignore           # Files ignored by Git
+├── components.json      # shadcn/ui configuration
+├── DOKUMENTASI-STRUKTUR-DALAM-PROYEK.md # In-depth project documentation
 ├── next.config.mjs      # Next.js configuration
-├── package.json         # Project dependencies
-├── postcss.config.mjs   # PostCSS configuration
-├── tailwind.config.js   # Tailwind CSS configuration
+├── package.json         # Project dependencies and scripts
+├── tailwind.config.ts   # Tailwind CSS configuration
 └── tsconfig.json        # TypeScript configuration
 ```
 
@@ -91,7 +101,7 @@ To learn more about the technologies used in this project:
 You can customize this wedding invitation page by:
 
 1. Modifying the content in `app/page.tsx`
-2. Changing colors in `tailwind.config.js`
+2. Changing colors in `tailwind.config.ts`
 3. Updating components in the `components/` directory
 4. Adding your own images to `public/` directory
 

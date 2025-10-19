@@ -1,69 +1,93 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
+
+import Image from "next/image";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 export function CoupleProfileSection() {
   return (
-    <section className="pt-4 pb-16 px-4">
-      <div className="max-w-4xl mx-auto">
-        <Card> {/* Card will now use the new theme automatically */}
-          <CardContent className="p-8 md:p-12">
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              {/* Bride */}
-              <div className="text-center space-y-4">
-                <div className="w-32 h-32 mx-auto bg-navy/10 rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-16 h-16 text-navy/40"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl md:text-3xl text-navy font-bold">
-                    Santi Rinawati
-                  </h3>
-                  <p className="font-sans text-navy/70 mt-2 leading-relaxed">
-                    Putri dari
-                    <br />
-                    Bapak Alm. Satrio &<br />
-                    Ibu Rohmatun
-                  </p>
-                </div>
-              </div>
+    <section className="py-20 px-4 bg-cream-100 overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+        <AnimateOnScroll className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground font-bold">
+            The Happy Couple
+          </h2>
+        </AnimateOnScroll>
 
-              {/* Ampersand */}
-              <div className="text-center">
-                <div className="font-serif text-6xl md:text-8xl text-gold font-bold">
-                  &
-                </div>
-              </div>
-
-              {/* Groom */}
-              <div className="text-center space-y-4">
-                <div className="w-32 h-32 mx-auto bg-navy/10 rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-16 h-16 text-navy/40"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl md:text-3xl text-navy font-bold">
-                    Muhammad Faril
-                  </h3>
-                  <p className="font-sans text-navy/70 mt-2 leading-relaxed">
-                    Putra dari
-                    <br />
-                    Bapak Ahmad Syuhada' &<br />
-                    Ibu Nur Hidayah
-                  </p>
-                </div>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          {/* Bride */}
+          <AnimateOnScroll
+            direction="right"
+            className="flex flex-col items-center text-center space-y-4"
+          >
+            <div className="relative w-48 h-48 md:w-56 md:h-56">
+              <Image
+                src="/Mempelai-wanita-&-pria/foto-pengantin-1.jpeg"
+                alt="Santi Rinawati"
+                fill
+                className="rounded-full object-cover border-4 border-stone-200 shadow-lg"
+              />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 opacity-80">
+                <Image
+                  src="/ornaments/Ornamenst dominan gold/flower-line-art-gold-lily-detail.png"
+                  alt="Ornamen Bunga Emas"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
-          </CardContent>
-        </Card>
+            <div>
+              <h3 className="font-serif text-3xl md:text-4xl text-foreground font-bold mt-4">
+                Muhammad Faril
+              </h3>
+              <p className="font-sans text-muted-foreground mt-2 leading-relaxed">
+                Putra dari
+                <br />
+                Bapak Ahmad Syuhada' & Ibu Nur Hidayah
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Ampersand */}
+          <AnimateOnScroll
+            delay={0.3}
+            className="text-center font-serif text-6xl md:text-8xl text-primary font-bold my-4 md:my-0"
+          >
+            &
+          </AnimateOnScroll>
+
+          {/* Groom */}
+          <AnimateOnScroll
+            direction="left"
+            className="flex flex-col items-center text-center space-y-4"
+          >
+            <div className="relative w-48 h-48 md:w-56 md:h-56">
+              <Image
+                src="/Mempelai-wanita-&-pria/foto-pengantin-2.jpeg"
+                alt="Muhammad Faril"
+                fill
+                className="rounded-full object-cover border-4 border-stone-200 shadow-lg"
+              />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 opacity-80 transform scale-x-[-1]">
+                <Image
+                  src="/ornaments/Ornamenst dominan gold/flower-line-art-gold-lily-detail.png"
+                  alt="Ornamen Bunga Emas"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            <div>
+              <h3 className="font-serif text-3xl md:text-4xl text-foreground font-bold mt-4">
+                Santi Rinawati
+              </h3>
+              <p className="font-sans text-muted-foreground mt-2 leading-relaxed">
+                Putri dari
+                <br />
+                Bapak Alm. Satrio & Ibu Rohmatun
+              </p>
+            </div>
+          </AnimateOnScroll>
+        </div>
       </div>
     </section>
   );

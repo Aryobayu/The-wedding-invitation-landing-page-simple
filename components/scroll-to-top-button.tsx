@@ -9,16 +9,17 @@ export function ScrollToTopButton() {
 
   // Fungsi untuk scroll ke elemen target
   const scrollToTop = () => {
-    const targetElement = document.getElementById('opening-verse');
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    // Scroll to top of the page instead of a specific element
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   useEffect(() => {
-    // Fungsi yang akan dijalankan saat event scroll terjadi
+    // Function that will run when scroll event occurs
     const toggleVisibility = () => {
-      // Tampilkan tombol jika pengguna scroll lebih dari 300px
+      // Show button if user scrolls more than 300px
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -26,10 +27,13 @@ export function ScrollToTopButton() {
       }
     };
 
-    // Tambahkan event listener saat komponen dimuat di client
-    window.addEventListener('scroll', toggleVisibility);
+    // Add event listener when component is mounted
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
 
-    // Cleanup: Hapus event listener saat komponen di-unmount
+    // Initial check in case the page is already scrolled
+    toggleVisibility();
+
+    // Cleanup: Remove event listener when component is unmounted
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };

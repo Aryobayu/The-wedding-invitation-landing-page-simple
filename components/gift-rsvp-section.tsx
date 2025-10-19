@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import { id } from "date-fns/locale";
@@ -17,8 +18,8 @@ import {
 } from "@/components/ui/select";
 import { Gift, CreditCard, Copy, Send, Loader2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
-// Definisikan tipe data untuk objek RSVP
 interface RsvpData {
   id: string;
   name: string;
@@ -28,20 +29,11 @@ interface RsvpData {
 }
 
 export function GiftRsvpSection() {
-  // State untuk form
-  const [formData, setFormData] = useState({
-    name: "",
-    message: "",
-    attendance: "",
-  });
-  // State untuk daftar RSVP dari database
+  const [formData, setFormData] = useState({ name: "", message: "", attendance: "" });
   const [rsvps, setRsvps] = useState<RsvpData[]>([]);
-  // State untuk loading saat mengambil data awal
   const [isLoading, setIsLoading] = useState(true);
-  // State untuk loading saat submit form
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Fungsi untuk mengambil data RSVP dari API
   const fetchRsvps = async () => {
     try {
       const response = await fetch("/api/rsvp");
@@ -55,7 +47,6 @@ export function GiftRsvpSection() {
     }
   };
 
-  // Ambil data saat komponen pertama kali dimuat
   useEffect(() => {
     fetchRsvps();
   }, []);
@@ -73,13 +64,9 @@ export function GiftRsvpSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
       if (!response.ok) throw new Error("Failed to submit");
-
       const newRsvp = await response.json();
-      // Tambahkan RSVP baru ke atas daftar tanpa refresh
       setRsvps([newRsvp, ...rsvps]);
-      // Kosongkan form
       setFormData({ name: "", message: "", attendance: "" });
       toast.success("Ucapan dan doa Anda telah terkirim!");
     } catch (error) {
@@ -90,12 +77,9 @@ export function GiftRsvpSection() {
     }
   };
 
-  // PERUBAHAN: Fungsi ini sekarang menerima parameter `duration`
   const copyToClipboard = (text: string, duration: number) => {
     navigator.clipboard.writeText(text).then(() => {
-      toast.success("Berhasil disalin", {
-        duration: duration, // Gunakan durasi dari parameter
-      });
+      toast.success("Berhasil disalin", { duration });
     });
   };
 
@@ -111,12 +95,13 @@ export function GiftRsvpSection() {
   };
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-20 px-4 bg-dusty-blue-100 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Bagian Kutipan */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <Card className="bg-card border border-border shadow-lg">
-            <CardContent className="p-8 md:p-12 text-center space-y-6">
+        <AnimateOnScroll className="max-w-3xl mx-auto mb-20">
+          <Card className="bg-card border-stone-200 shadow-lg text-center overflow-hidden">
+            <CardContent className="p-8 md:p-12 space-y-6">
+                <Image src="/ornaments/Ornamenst dominan gold/divider-abstract-gold-curve-01.png" alt="Ornamen Pembatas Atas" width={200} height={50} className="mx-auto opacity-80" />
               <p
                 className="text-2xl md:text-3xl font-serif text-primary leading-relaxed"
                 dir="rtl"
@@ -129,181 +114,191 @@ export function GiftRsvpSection() {
                 dalam kebaikan."
               </p>
               <p className="text-sm text-muted-foreground/80">
-                (HR. Abu Daud no. 2130, disahihkan Al Albani dalam Shahih Abu
-                Daud)
+                (HR. Abu Daud no. 2130)
               </p>
+               <Image src="/ornaments/Ornamenst dominan gold/divider-abstract-gold-curve-01.png" alt="Ornamen Pembatas Bawah" width={200} height={50} className="mx-auto opacity-80 transform rotate-180" />
             </CardContent>
           </Card>
-        </div>
+        </AnimateOnScroll>
 
         {/* Bagian Wedding Gift */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif text-primary font-bold mb-4">
+        <AnimateOnScroll delay={0.1} className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground font-bold mb-4">
             Wedding Gift
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Tanpa mengurangi rasa hormat, bagi Bapak/Ibu/Saudara/i yang ingin
-            memberikan tanda kasih untuk kami, dapat melalui:
+            Tanpa mengurangi rasa hormat, bagi Anda yang ingin memberikan tanda kasih, dapat melalui:
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <Card className="bg-card border border-border shadow-lg">
-            <CardHeader className="text-center">
-              <CardTitle className="flex items-center justify-center gap-2 text-xl text-primary">
-                <CreditCard className="w-6 h-6" />
-                Transfer Bank
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center space-y-2">
-                <p className="text-sm text-muted-foreground">Bank BNI</p>
-                <p className="text-lg font-mono font-bold text-card-foreground">
-                  1795545689
-                </p>
-                <p className="text-sm text-muted-foreground">MUHAMMAD FARIL</p>
-              </div>
-              <Button
-                onClick={() => copyToClipboard("1795545689", 2000)}
-                variant="outline"
-                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Copy className="w-4 h-4 mr-2" />
-                Copy Rekening
-              </Button>
-            </CardContent>
+        <AnimateOnScroll delay={0.2} className="grid md:grid-cols-2 gap-8 mb-20">
+          <Card className="relative bg-card border-stone-200 shadow-lg overflow-hidden">
+             <Image src="/ornaments/Ornamenst dominan blue/bouquet-watercolor-blue-detailed.png" alt="Ornamen Kartu" width={150} height={150} className="absolute -bottom-8 -left-10 opacity-20 dark:opacity-30" />
+            <div className="relative z-10">
+              <CardHeader className="text-center">
+                <CardTitle className="flex items-center justify-center gap-2 text-xl text-primary">
+                  <CreditCard className="w-6 h-6" />
+                  Transfer Bank
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-center space-y-2">
+                  <p className="text-sm text-muted-foreground">Bank BNI</p>
+                  <p className="text-lg font-mono font-bold text-foreground">
+                    1795545689
+                  </p>
+                  <p className="text-sm text-muted-foreground">a.n. MUHAMMAD FARIL</p>
+                </div>
+                <Button
+                  onClick={() => copyToClipboard("1795545689", 2000)}
+                  variant="outline"
+                  className="w-full"
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy Rekening
+                </Button>
+              </CardContent>
+            </div>
           </Card>
-          <Card className="bg-card border border-border shadow-lg">
-            <CardHeader className="text-center">
-              <CardTitle className="flex items-center justify-center gap-2 text-xl text-primary">
-                <Gift className="w-6 h-6" />
-                Kirim Kado
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center space-y-2">
-                <p className="text-sm text-muted-foreground">
-                  Alamat Pengiriman:
-                </p>
-                <p className="text-sm text-card-foreground leading-relaxed">
-                  Ds.Banjaragung RT 04 RW 05
-                  <br />
-                  Kec. Bangsri Kab. Jepara
-                  <br />
-                  Jawa Tengah 59453
-                </p>
-              </div>
-              <Button
-                onClick={() =>
-                  copyToClipboard(
-                    "Ds.Banjaragung RT 04 RW 05 Kec. Bangsri Kab. Jepara. Jawa Tengah 59453",
-                    2000
-                  )
-                }
-                variant="outline"
-                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Copy className="w-4 h-4 mr-2" />
-                Copy Alamat
-              </Button>
-            </CardContent>
+          <Card className="relative bg-card border-stone-200 shadow-lg overflow-hidden">
+            <Image src="/ornaments/Ornamenst dominan blue/bouquet-watercolor-blue-detailed.png" alt="Ornamen Kartu" width={150} height={150} className="absolute -bottom-8 -right-10 opacity-20 dark:opacity-30" />
+            <div className="relative z-10">
+              <CardHeader className="text-center">
+                <CardTitle className="flex items-center justify-center gap-2 text-xl text-primary">
+                  <Gift className="w-6 h-6" />
+                  Kirim Kado
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-center space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    Alamat Pengiriman:
+                  </p>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    Ds.Banjaragung RT 04 RW 05
+                    <br />
+                    Kec. Bangsri Kab. Jepara, 59453
+                  </p>
+                </div>
+                <Button
+                  onClick={() =>
+                    copyToClipboard(
+                      "Ds.Banjaragung RT 04 RW 05 Kec. Bangsri Kab. Jepara. Jawa Tengah 59453",
+                      2000
+                    )
+                  }
+                  variant="outline"
+                  className="w-full"
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy Alamat
+                </Button>
+              </CardContent>
+            </div>
           </Card>
-        </div>
+        </AnimateOnScroll>
 
         {/* Form RSVP */}
-        <Card className="bg-card border border-border shadow-lg mb-12">
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl md:text-3xl font-serif text-primary">
-              RSVP
-            </CardTitle>
-            <p className="text-muted-foreground">Ucapan Selamat & Do'a</p>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-card-foreground mb-2"
-                >
-                  Nama Lengkap
-                </label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  placeholder="Masukkan nama lengkap Anda"
-                  className="w-full"
-                  disabled={isSubmitting}
-                />
-              </div>
+        <AnimateOnScroll delay={0.1}>
+          <Card className="relative bg-card border-stone-200 shadow-lg mb-12 overflow-hidden">
+            <Image src="/ornaments/Ornamenst dominan blue/corner-watercolor-blue-01.png" alt="Ornamen RSVP" width={200} height={200} className="absolute -top-12 -left-16 opacity-20 dark:opacity-30" />
+            <div className="relative z-10">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl md:text-3xl font-serif text-primary">
+                  RSVP
+                </CardTitle>
+                <p className="text-muted-foreground">Ucapan Selamat & Do'a</p>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
+                      Nama Lengkap
+                    </label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      placeholder="Tuliskan nama Anda di sini..."
+                      className="w-full"
+                      disabled={isSubmitting}
+                    />
+                  </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-card-foreground mb-2"
-                >
-                  Ucapan & Doa
-                </label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  placeholder="Berikan ucapan dan doa terbaik untuk kami..."
-                  rows={4}
-                  className="w-full"
-                  disabled={isSubmitting}
-                />
-              </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
+                      Ucapan & Doa
+                    </label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
+                      placeholder="Berikan ucapan dan doa terbaik untuk kami..."
+                      rows={4}
+                      className="w-full"
+                      disabled={isSubmitting}
+                    />
+                  </div>
 
-              <div>
-                <label
-                  htmlFor="attendance"
-                  className="block text-sm font-medium text-card-foreground mb-2"
-                >
-                  Konfirmasi Kehadiran
-                </label>
-                <Select
-                  value={formData.attendance}
-                  onValueChange={(value) =>
-                    setFormData({ ...formData, attendance: value })
-                  }
-                  disabled={isSubmitting}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Pilih konfirmasi kehadiran" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="hadir">Hadir</SelectItem>
-                    <SelectItem value="tidak-hadir">Tidak Hadir</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+                  <div>
+                    <label
+                      htmlFor="attendance"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
+                      Konfirmasi Kehadiran
+                    </label>
+                    <Select
+                      value={formData.attendance}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, attendance: value })
+                      }
+                      disabled={isSubmitting}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Pilih konfirmasi kehadiran" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="hadir">Hadir</SelectItem>
+                        <SelectItem value="tidak-hadir">Tidak Hadir</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg font-medium"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                ) : (
-                  <Send className="w-5 h-5 mr-2" />
-                )}
-                {isSubmitting ? "Mengirim..." : "Kirim"}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg font-medium"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    ) : (
+                      <Send className="w-5 h-5 mr-2" />
+                    )}
+                    {isSubmitting ? "Mengirim..." : "Kirim"}
+                  </Button>
+                </form>
+              </CardContent>
+            </div>
+          </Card>
+        </AnimateOnScroll>
 
         {/* Daftar Ucapan RSVP */}
         <div className="space-y-6">
-          <h3 className="text-2xl md:text-3xl font-serif text-primary text-center">
-            Daftar Ucapan
-          </h3>
+          <AnimateOnScroll>
+            <h3 className="text-2xl md:text-3xl font-serif text-primary text-center">
+              Daftar Ucapan
+            </h3>
+          </AnimateOnScroll>
           {isLoading ? (
             <div className="space-y-4">
               <Skeleton className="h-24 w-full" />
@@ -314,13 +309,13 @@ export function GiftRsvpSection() {
             rsvps.map((rsvp) => (
               <Card
                 key={rsvp.id}
-                className="bg-card border border-border shadow-sm"
+                className="bg-card/80 border-stone-200 shadow-sm backdrop-blur-sm"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-grow">
                       <div className="flex items-center gap-2 mb-2">
-                        <h4 className="font-bold text-lg text-card-foreground">
+                        <h4 className="font-bold text-lg text-foreground">
                           {rsvp.name}
                         </h4>
                         <AttendanceIcon status={rsvp.attendance} />
@@ -332,7 +327,7 @@ export function GiftRsvpSection() {
                           { locale: id }
                         )}
                       </p>
-                      <p className="text-card-foreground whitespace-pre-wrap">
+                      <p className="text-foreground whitespace-pre-wrap">
                         {rsvp.message}
                       </p>
                     </div>

@@ -1,0 +1,649 @@
+{
+  "type": "folder",
+  "name": "wedding-invitation",
+  "path": ".",
+  "children": [
+    {
+      "type": "folder",
+      "name": "app",
+      "path": "app",
+      "children": [
+        {
+          "type": "folder",
+          "name": "api",
+          "path": "app/api",
+          "children": [
+            {
+              "type": "folder",
+              "name": "rsvp",
+              "path": "app/api/rsvp",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "route.ts",
+                  "path": "app/api/rsvp/route.ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "client-layout.tsx",
+          "path": "app/client-layout.tsx"
+        },
+        {
+          "type": "file",
+          "name": "globals.css",
+          "path": "app/globals.css"
+        },
+        {
+          "type": "file",
+          "name": "layout.tsx",
+          "path": "app/layout.tsx"
+        },
+        {
+          "type": "file",
+          "name": "page.tsx",
+          "path": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "components",
+      "path": "components",
+      "children": [
+        {
+          "type": "folder",
+          "name": "ui",
+          "path": "components/ui",
+          "children": [
+            {
+              "type": "file",
+              "name": "accordion.tsx",
+              "path": "components/ui/accordion.tsx"
+            },
+            {
+              "type": "file",
+              "name": "alert-dialog.tsx",
+              "path": "components/ui/alert-dialog.tsx"
+            },
+            {
+              "type": "file",
+              "name": "alert.tsx",
+              "path": "components/ui/alert.tsx"
+            },
+            {
+              "type": "file",
+              "name": "aspect-ratio.tsx",
+              "path": "components/ui/aspect-ratio.tsx"
+            },
+            {
+              "type": "file",
+              "name": "avatar.tsx",
+              "path": "components/ui/avatar.tsx"
+            },
+            {
+              "type": "file",
+              "name": "badge.tsx",
+              "path": "components/ui/badge.tsx"
+            },
+            {
+              "type": "file",
+              "name": "breadcrumb.tsx",
+              "path": "components/ui/breadcrumb.tsx"
+            },
+            {
+              "type": "file",
+              "name": "button.tsx",
+              "path": "components/ui/button.tsx"
+            },
+            {
+              "type": "file",
+              "name": "calendar.tsx",
+              "path": "components/ui/calendar.tsx"
+            },
+            {
+              "type": "file",
+              "name": "card.tsx",
+              "path": "components/ui/card.tsx"
+            },
+            {
+              "type": "file",
+              "name": "carousel.tsx",
+              "path": "components/ui/carousel.tsx"
+            },
+            {
+              "type": "file",
+              "name": "chart.tsx",
+              "path": "components/ui/chart.tsx"
+            },
+            {
+              "type": "file",
+              "name": "checkbox.tsx",
+              "path": "components/ui/checkbox.tsx"
+            },
+            {
+              "type": "file",
+              "name": "collapsible.tsx",
+              "path": "components/ui/collapsible.tsx"
+            },
+            {
+              "type": "file",
+              "name": "command.tsx",
+              "path": "components/ui/command.tsx"
+            },
+            {
+              "type": "file",
+              "name": "context-menu.tsx",
+              "path": "components/ui/context-menu.tsx"
+            },
+            {
+              "type": "file",
+              "name": "dialog.tsx",
+              "path": "components/ui/dialog.tsx"
+            },
+            {
+              "type": "file",
+              "name": "drawer.tsx",
+              "path": "components/ui/drawer.tsx"
+            },
+            {
+              "type": "file",
+              "name": "dropdown-menu.tsx",
+              "path": "components/ui/dropdown-menu.tsx"
+            },
+            {
+              "type": "file",
+              "name": "form.tsx",
+              "path": "components/ui/form.tsx"
+            },
+            {
+              "type": "file",
+              "name": "hover-card.tsx",
+              "path": "components/ui/hover-card.tsx"
+            },
+            {
+              "type": "file",
+              "name": "input-otp.tsx",
+              "path": "components/ui/input-otp.tsx"
+            },
+            {
+              "type": "file",
+              "name": "input.tsx",
+              "path": "components/ui/input.tsx"
+            },
+            {
+              "type": "file",
+              "name": "label.tsx",
+              "path": "components/ui/label.tsx"
+            },
+            {
+              "type": "file",
+              "name": "menubar.tsx",
+              "path": "components/ui/menubar.tsx"
+            },
+            {
+              "type": "file",
+              "name": "navigation-menu.tsx",
+              "path": "components/ui/navigation-menu.tsx"
+            },
+            {
+              "type": "file",
+              "name": "pagination.tsx",
+              "path": "components/ui/pagination.tsx"
+            },
+            {
+              "type": "file",
+              "name": "popover.tsx",
+              "path": "components/ui/popover.tsx"
+            },
+            {
+              "type": "file",
+              "name": "progress.tsx",
+              "path": "components/ui/progress.tsx"
+            },
+            {
+              "type": "file",
+              "name": "radio-group.tsx",
+              "path": "components/ui/radio-group.tsx"
+            },
+            {
+              "type": "file",
+              "name": "resizable.tsx",
+              "path": "components/ui/resizable.tsx"
+            },
+            {
+              "type": "file",
+              "name": "scroll-area.tsx",
+              "path": "components/ui/scroll-area.tsx"
+            },
+            {
+              "type": "file",
+              "name": "select.tsx",
+              "path": "components/ui/select.tsx"
+            },
+            {
+              "type": "file",
+              "name": "separator.tsx",
+              "path": "components/ui/separator.tsx"
+            },
+            {
+              "type": "file",
+              "name": "sheet.tsx",
+              "path": "components/ui/sheet.tsx"
+            },
+            {
+              "type": "file",
+              "name": "sidebar.tsx",
+              "path": "components/ui/sidebar.tsx"
+            },
+            {
+              "type": "file",
+              "name": "skeleton.tsx",
+              "path": "components/ui/skeleton.tsx"
+            },
+            {
+              "type": "file",
+              "name": "slider.tsx",
+              "path": "components/ui/slider.tsx"
+            },
+            {
+              "type": "file",
+              "name": "sonner.tsx",
+              "path": "components/ui/sonner.tsx"
+            },
+            {
+              "type": "file",
+              "name": "switch.tsx",
+              "path": "components/ui/switch.tsx"
+            },
+            {
+              "type": "file",
+              "name": "table.tsx",
+              "path": "components/ui/table.tsx"
+            },
+            {
+              "type": "file",
+              "name": "tabs.tsx",
+              "path": "components/ui/tabs.tsx"
+            },
+            {
+              "type": "file",
+              "name": "textarea.tsx",
+              "path": "components/ui/textarea.tsx"
+            },
+            {
+              "type": "file",
+              "name": "toast.tsx",
+              "path": "components/ui/toast.tsx"
+            },
+            {
+              "type": "file",
+              "name": "toaster.tsx",
+              "path": "components/ui/toaster.tsx"
+            },
+            {
+              "type": "file",
+              "name": "toggle-group.tsx",
+              "path": "components/ui/toggle-group.tsx"
+            },
+            {
+              "type": "file",
+              "name": "toggle.tsx",
+              "path": "components/ui/toggle.tsx"
+            },
+            {
+              "type": "file",
+              "name": "tooltip.tsx",
+              "path": "components/ui/tooltip.tsx"
+            },
+            {
+              "type": "file",
+              "name": "use-mobile.tsx",
+              "path": "components/ui/use-mobile.tsx"
+            },
+            {
+              "type": "file",
+              "name": "use-toast.ts",
+              "path": "components/ui/use-toast.ts"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "closing-section.tsx",
+          "path": "components/closing-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "countdown-section.tsx",
+          "path": "components/countdown-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "couple-profile-section.tsx",
+          "path": "components/couple-profile-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "event-details-section.tsx",
+          "path": "components/event-details-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "gift-rsvp-section.tsx",
+          "path": "components/gift-rsvp-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "hero-section.tsx",
+          "path": "components/hero-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "music-player.tsx",
+          "path": "components/music-player.tsx"
+        },
+        {
+          "type": "file",
+          "name": "opening-verse-section.tsx",
+          "path": "components/opening-verse-section.tsx"
+        },
+        {
+          "type": "file",
+          "name": "scroll-to-top-button.tsx",
+          "path": "components/scroll-to-top-button.tsx"
+        },
+        {
+          "type": "file",
+          "name": "theme-provider.tsx",
+          "path": "components/theme-provider.tsx"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "context",
+      "path": "context",
+      "children": [
+        {
+          "type": "file",
+          "name": "audio-context.tsx",
+          "path": "context/audio-context.tsx"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "hooks",
+      "path": "hooks",
+      "children": [
+        {
+          "type": "file",
+          "name": "use-mobile.ts",
+          "path": "hooks/use-mobile.ts"
+        },
+        {
+          "type": "file",
+          "name": "use-toast.ts",
+          "path": "hooks/use-toast.ts"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "lib",
+      "path": "lib",
+      "children": [
+        {
+          "type": "file",
+          "name": "prisma.ts",
+          "path": "lib/prisma.ts"
+        },
+        {
+          "type": "file",
+          "name": "utils.ts",
+          "path": "lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "prisma",
+      "path": "prisma",
+      "children": [
+        {
+          "type": "folder",
+          "name": "migrations",
+          "path": "prisma/migrations",
+          "children": [
+            {
+              "type": "folder",
+              "name": "20251013090332_init_rsvp_with_timestamp",
+              "path": "prisma/migrations/20251013090332_init_rsvp_with_timestamp",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "migration.sql",
+                  "path": "prisma/migrations/20251013090332_init_rsvp_with_timestamp/migration.sql"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "migration_lock.toml",
+              "path": "prisma/migrations/migration_lock.toml"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "dev.db",
+          "path": "prisma/dev.db"
+        },
+        {
+          "type": "file",
+          "name": "schema.prisma",
+          "path": "prisma/schema.prisma"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "public",
+      "path": "public",
+      "children": [
+        {
+          "type": "folder",
+          "name": "music",
+          "path": "public/music",
+          "children": [
+            {
+              "type": "file",
+              "name": "lagu-pernikahan.mp3",
+              "path": "public/music/lagu-pernikahan.mp3"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "ornaments",
+          "path": "public/ornaments",
+          "children": []
+        },
+        {
+          "type": "folder",
+          "name": "Refrensi-pewarnaan",
+          "path": "public/Refrensi-pewarnaan",
+          "children": [
+            {
+              "type": "file",
+              "name": "Refrensi-pewarnaan-buat-sekreatifmungkin.webp",
+              "path": "public/Refrensi-pewarnaan/Refrensi-pewarnaan-buat-sekreatifmungkin.webp"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Refrensi-styling-layout-fonts-&-typographi",
+          "path": "public/Refrensi-styling-layout-fonts-&-typographi",
+          "children": [
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-41-15.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-41-15.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-42-15.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-42-15.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-43-23.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-43-23.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-45-33.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-45-33.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-45-45.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-45-45.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-45-52.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-45-52.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 09-45-59.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 09-45-59.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 10-04-32.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 10-04-32.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 10-04-44.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 10-04-44.png"
+            },
+            {
+              "type": "file",
+              "name": "Screenshot From 2025-10-14 10-05-12.png",
+              "path": "public/Refrensi-styling-layout-fonts-&-typographi/Screenshot From 2025-10-14 10-05-12.png"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "placeholder-logo.png",
+          "path": "public/placeholder-logo.png"
+        },
+        {
+          "type": "file",
+          "name": "placeholder-logo.svg",
+          "path": "public/placeholder-logo.svg"
+        },
+        {
+          "type": "file",
+          "name": "placeholder-user.jpg",
+          "path": "public/placeholder-user.jpg"
+        },
+        {
+          "type": "file",
+          "name": "placeholder.jpg",
+          "path": "public/placeholder.jpg"
+        },
+        {
+          "type": "file",
+          "name": "placeholder.svg",
+          "path": "public/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "styles",
+      "path": "styles",
+      "children": []
+    },
+    {
+      "type": "file",
+      "name": ".env",
+      "path": ".env"
+    },
+    {
+      "type": "file",
+      "name": ".gitignore",
+      "path": ".gitignore"
+    },
+    {
+      "type": "file",
+      "name": "components.json",
+      "path": "components.json"
+    },
+    {
+      "type": "file",
+      "name": "GEMINI-FIX-ERROR.md",
+      "path": "GEMINI-FIX-ERROR.md"
+    },
+    {
+      "type": "file",
+      "name": "GEMINI.md",
+      "path": "GEMINI.md"
+    },
+    {
+      "type": "file",
+      "name": "globals.css",
+      "path": "globals.css"
+    },
+    {
+      "type": "file",
+      "name": "next-env.d.ts",
+      "path": "next-env.d.ts"
+    },
+    {
+      "type": "file",
+      "name": "next.config.mjs",
+      "path": "next.config.mjs"
+    },
+    {
+      "type": "file",
+      "name": "package.json",
+      "path": "package.json"
+    },
+    {
+      "type": "file",
+      "name": "pnpm-lock.yaml",
+      "path": "pnpm-lock.yaml"
+    },
+    {
+      "type": "file",
+      "name": "postcss.config.mjs",
+      "path": "postcss.config.mjs"
+    },
+    {
+      "type": "file",
+      "name": "README.md",
+      "path": "README.md"
+    },
+    {
+      "type": "file",
+      "name": "tailwind.config.ts",
+      "path": "tailwind.config.ts"
+    },
+    {
+      "type": "file",
+      "name": "tsconfig.json",
+      "path": "tsconfig.json"
+    }
+  ]
+}

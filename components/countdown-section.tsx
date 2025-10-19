@@ -1,13 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 
 const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-col items-center justify-center bg-black/10 border border-primary/20 rounded-lg p-4 md:p-6 w-20 h-20 md:w-28 md:h-28 shadow-lg backdrop-blur-sm">
-    <span className="font-serif text-3xl md:text-5xl font-bold text-primary tracking-tighter">
+  <div className="flex flex-col items-center justify-center bg-cream-100/50 border border-stone-200 rounded-xl p-4 md:p-6 w-24 h-24 md:w-32 md:h-32 shadow-lg backdrop-blur-sm">
+    <span className="font-serif text-4xl md:text-6xl font-bold text-primary tracking-tighter">
       {value.toString().padStart(2, '0')}
     </span>
-    <span className="font-sans text-xs md:text-sm text-foreground/80 uppercase tracking-widest">
+    <span className="font-sans text-xs md:text-sm text-muted-foreground uppercase tracking-widest mt-1">
       {label}
     </span>
   </div>
@@ -38,7 +40,6 @@ export function CountdownSection() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // Initialize timeLeft on the client to avoid hydration mismatch
     setTimeLeft(calculateTimeLeft());
     setIsClient(true);
 
@@ -50,12 +51,32 @@ export function CountdownSection() {
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-foreground/5">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-serif text-3xl md:text-4xl text-primary mb-8">
-          Menuju Hari Bahagia
-        </h2>
-        <div className="flex items-center justify-center gap-3 md:gap-6">
+    <section className="relative py-20 px-4 bg-dusty-blue-100 overflow-hidden">
+       {/* Ornaments */}
+      <div className="absolute top-0 left-0 w-32 h-32 md:w-48 md:h-48 opacity-30">
+        <Image 
+          src="/ornaments/Ornamenst dominan gold/arrangement-line-art-gold-corner.png"
+          alt="Ornamen Sudut Kiri Atas"
+          fill
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 md:w-48 md:h-48 opacity-30 transform rotate-180">
+        <Image 
+          src="/ornaments/Ornamenst dominan gold/arrangement-line-art-gold-corner.png"
+          alt="Ornamen Sudut Kanan Bawah"
+          fill
+          className="object-contain"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <AnimateOnScroll>
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-10">
+            Menuju Hari Bahagia
+          </h2>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.2} className="flex items-center justify-center gap-3 md:gap-6">
           {isClient ? (
             <>
               <CountdownUnit value={timeLeft.days} label="Hari" />
@@ -64,6 +85,7 @@ export function CountdownSection() {
               <CountdownUnit value={timeLeft.seconds} label="Detik" />
             </>
           ) : (
+            // Skeleton/Placeholder view before client-side rendering
             <>
               <CountdownUnit value={0} label="Hari" />
               <CountdownUnit value={0} label="Jam" />
@@ -71,7 +93,7 @@ export function CountdownSection() {
               <CountdownUnit value={0} label="Detik" />
             </>
           )}
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
