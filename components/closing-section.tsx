@@ -31,13 +31,13 @@ export function ClosingSection() {
 
             <div className="text-cream-100/90 text-base md:text-lg space-y-4">
               <div>
-                <p className="font-semibold">Kel. Besar Bapak Alm. Satrio</p>
-                <p className="font-semibold">& Ibu Rohmatun</p>
+                <p className="font-semibold">Kel. Besar Bapak Ahmad Syuhada'</p>
+                <p className="font-semibold">& Ibu Nur Hidayah</p>
               </div>
               <p className="font-serif text-2xl text-gold-300">&</p>
               <div>
-                <p className="font-semibold">Kel. Besar Bapak Ahmad Syuhada'</p>
-                <p className="font-semibold">& Ibu Nur Hidayah</p>
+                <p className="font-semibold">Kel. Besar Bapak Alm. Satrio'</p>
+                <p className="font-semibold">& Ibu Rohmatun</p>
               </div>
             </div>
           </div>
